@@ -15,24 +15,24 @@ public:
     {
         vector<int> start;
         vector<int> end;
-        //·Ö±ðµÃµ½»î¶¯ÆðÊ¼Ê±¼ä
+        //ï¿½Ö±ï¿½Ãµï¿½ï¿½î¶¯ï¿½ï¿½Ê¼Ê±ï¿½ï¿½
         for (int i = 0; i < n; i++)
         {
             start.push_back(startEnd[i][0]);
             end.push_back(startEnd[i][1]);
         }
-        //·Ö±ð¶Ô¿ªÊ¼ºÍ½áÊøÊ±¼äÅÅÐò
+        //ï¿½Ö±ï¿½Ô¿ï¿½Ê¼ï¿½Í½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         sort(start.begin(), start.end());
         sort(end.begin(), end.end());
         int res = 0;
         int j = 0;
         for (int i = 0; i < n; i++)
         {
-            //ÐÂ¿ªÊ¼µÄ½ÚÄ¿´óÓÚÉÏÒ»ÂÖ½áÊøµÄÊ±¼ä£¬Ö÷³ÖÈË²»±ä
+            //ï¿½Â¿ï¿½Ê¼ï¿½Ä½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½
             if (start[i] >= end[j])
                 j++;
             else
-                //Ö÷³ÖÈËÔö¼Ó
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 res++;
         }
         return res;
@@ -47,4 +47,13 @@ int main()
 
     std::cout << ret << " " << std::endl;
 
+    Solution1 ss1;
+    vector<Interval > num1 = { {10, 30},{ 20, 60 },{80, 100} };
+    vector<Interval > num2 = ss1.merge(num1);
+
+
+    for (const auto& row : num2)
+    {
+        std::cout << row.start << " " << row.end << std::endl;;
+    }
 }
